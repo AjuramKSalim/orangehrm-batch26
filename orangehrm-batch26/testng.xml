@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="OrangeHRM" verbose="1" >
+    <test name="Chrome Tests" >
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="ca.qaguru.oranghrmbatch21.tests.EducationTests" />
+            <class name="ca.qaguru.oranghrmbatch21.tests.JobCategoryTest"></class>
+        </classes>
+    </test>
+
+    <test name="Firefox Tests" enabled="false">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="ca.qaguru.oranghrmbatch21.tests.EducationTests" />
+            <class name="ca.qaguru.oranghrmbatch21.tests.JobCategoryTest"></class>
+        </classes>
+    </test>
+
+</suite>
