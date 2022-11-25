@@ -8,13 +8,5 @@
             <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests"></class>
         </classes>
     </test>
-
-    <test name="Firefox Tests" enabled="false">
-        <parameter name="browser" value="firefox"></parameter>
-        <classes>
-            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests" />
-            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests"></class>
-        </classes>
-    </test>
-
+ 
 </suite>
