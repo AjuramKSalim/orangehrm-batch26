@@ -4,16 +4,16 @@
     <test name="Chrome Tests" >
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="ca.qaguru.oranghrmbatch21.tests.EducationTests" />
-            <class name="ca.qaguru.oranghrmbatch21.tests.JobCategoryTest"></class>
+            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests" />
+            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests"></class>
         </classes>
     </test>
 
     <test name="Firefox Tests" enabled="false">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="ca.qaguru.oranghrmbatch21.tests.EducationTests" />
-            <class name="ca.qaguru.oranghrmbatch21.tests.JobCategoryTest"></class>
+            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests" />
+            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests"></class>
         </classes>
     </test>
 
