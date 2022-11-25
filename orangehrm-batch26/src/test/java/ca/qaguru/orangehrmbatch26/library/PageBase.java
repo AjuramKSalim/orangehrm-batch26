@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,7 +25,7 @@ public abstract class PageBase {
     }
     protected void click(By by) {
         try {
-            new WebDriverWait(driver,WAIT_TIME)
+            new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by))
                     .click();
@@ -42,7 +43,7 @@ public abstract class PageBase {
     }
     protected void mouseHover(By by) {
         try {
-            WebElement we = new WebDriverWait(driver,WAIT_TIME)
+            WebElement we = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by));
 //            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", we);
@@ -91,7 +92,7 @@ public abstract class PageBase {
             }
 
             try {
-                WebElement we = new WebDriverWait(driver, WAIT_TIME)
+                WebElement we = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME))
                         .until(ExpectedConditions
                                 .presenceOfElementLocated(by));
                 we.clear();
@@ -134,7 +135,7 @@ public abstract class PageBase {
             }
 
             try {
-                WebElement we = new WebDriverWait(driver, WAIT_TIME)
+                WebElement we = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                         .until(ExpectedConditions
                                 .presenceOfElementLocated(by));
                 we.sendKeys(text);
@@ -156,7 +157,7 @@ public abstract class PageBase {
 
     protected void select(By by, String visibleText) {
         try {
-            new Select(new WebDriverWait(driver,WAIT_TIME)
+            new Select(new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by)))
                     .selectByVisibleText(visibleText);
@@ -178,7 +179,7 @@ public abstract class PageBase {
     }
     protected List<String> getListBoxItems(By by) {
         try {
-            List<String> items =  new Select(new WebDriverWait(driver,WAIT_TIME)
+            List<String> items =  new Select(new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by)))
                     .getOptions().stream().map(WebElement::getText).collect(Collectors.toList());
@@ -196,14 +197,14 @@ public abstract class PageBase {
 
 
     protected String getText(By by) {
-        return new WebDriverWait(driver,WAIT_TIME)
+        return new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                 .until(ExpectedConditions
                         .elementToBeClickable(by))
                 .getText();
     }
     protected boolean isElementPresent(By by) {
         try {
-            new WebDriverWait(driver,WAIT_TIME)
+            new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .presenceOfAllElementsLocatedBy(by));
         }catch (Exception e){
@@ -213,7 +214,7 @@ public abstract class PageBase {
     }
     protected boolean isElementVisible(By by) {
         try {
-            new WebDriverWait(driver,WAIT_TIME)
+            new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .visibilityOfAllElementsLocatedBy(by));
         }catch (Exception e){
@@ -223,7 +224,7 @@ public abstract class PageBase {
     }
     protected boolean isElementClickable(By by) {
         try {
-            new WebDriverWait(driver,WAIT_TIME)
+            new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by));
         }catch (Exception e){
@@ -242,14 +243,14 @@ public abstract class PageBase {
     //Ignore
     protected void clickJSE(By by){
         JavascriptExecutor js=(JavascriptExecutor) driver;
-        WebElement webElement = new WebDriverWait(driver,WAIT_TIME)
+        WebElement webElement = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                 .until(ExpectedConditions
                         .elementToBeClickable(by));
         js.executeScript("arguments[0].click()", webElement);
     }
     protected void scrollInToView(By by){
         try {
-            WebElement webElement = new WebDriverWait(driver,WAIT_TIME)
+            WebElement webElement = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by));
             Actions actions = new Actions(driver);
@@ -273,7 +274,7 @@ public abstract class PageBase {
         if(retries[0]<=0) return;
 
         try {
-            WebElement webElement = new WebDriverWait(driver,WAIT_TIME)
+            WebElement webElement = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by));
             click(by);
@@ -309,7 +310,7 @@ public abstract class PageBase {
         }
 
         try {
-            WebElement webElement = new WebDriverWait(driver,WAIT_TIME)
+            WebElement webElement = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .elementToBeClickable(by));
             click(by);
@@ -333,7 +334,7 @@ public abstract class PageBase {
     }
     protected Rectangle getRect(By by){
         try {
-            WebElement webElement = new WebDriverWait(driver,WAIT_TIME)
+            WebElement webElement = new WebDriverWait(driver,Duration.ofSeconds(WAIT_TIME))
                     .until(ExpectedConditions
                             .visibilityOfElementLocated(by));
             return webElement.getRect();
