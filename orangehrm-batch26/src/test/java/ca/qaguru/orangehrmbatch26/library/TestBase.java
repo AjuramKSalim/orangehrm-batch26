@@ -19,7 +19,7 @@ public abstract class TestBase {
 
     @BeforeMethod
     @Parameters("browser")
-    public void beforeMethod(@Optional("chrome") String browser){
+    public void beforeMethod(@Optional("firefox") String browser){
         this.browser = browser;
         System.out.println("Browser : " + browser);
         getDriver();
