@@ -13,10 +13,10 @@ public class LicensePage extends PageBase {
     public LicensePage(WebDriver driver) {super(driver);
     }
 
-    public void addNewLicense()
+    public void addNewLicense(String newLicense)
     {
         click(By.cssSelector(licenseAdd));
-        setText(By.cssSelector(licenseName), "New License");
+        setText(By.cssSelector(licenseName), newLicense);
         click(By.cssSelector(licenseSave));
 
     }
