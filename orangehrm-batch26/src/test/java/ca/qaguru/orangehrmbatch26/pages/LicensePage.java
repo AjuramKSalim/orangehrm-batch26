@@ -10,10 +10,10 @@ import org.testng.Assert;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class License_New_Page extends PageBase {
+public class LicensePage extends PageBase {
 
     WebDriver driver;
-    public License_New_Page(WebDriver driver) {
+    public LicensePage(WebDriver driver) {
         super(driver);
         this.driver=driver;
         PageFactory.initElements(driver,this);
