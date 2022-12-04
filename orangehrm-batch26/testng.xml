@@ -4,8 +4,8 @@
     <test name="Chrome Tests" >
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests" />
-            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests"></class>
+            <class name="ca.qaguru.orangehrmbatch26.tests.EducationTests"/>
+            <class name="ca.qaguru.orangehrmbatch26.tests.LicenseTest"/>
         </classes>
     </test>
  
