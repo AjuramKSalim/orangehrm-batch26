@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,9 +30,10 @@ public class LicensePage extends PageBase {
     @FindBy(xpath = "//div[@class='oxd-table-body'] /div[@class='oxd-table-card']")
     private List<WebElement> licenses;
 
-    public boolean licenseAdd(String License) {
+
+    public boolean licenseAdd(String license) {
         click(By.cssSelector(licenseAddBtn));
-        setText(By.cssSelector(txtBoxLicense), License);
+        setText(By.cssSelector(txtBoxLicense), license);
         if (getText(By.xpath(lblAlreadyExistsMessage)).contains("Already exists")) {
             click(By.xpath(cancelBtn));
         } else {
@@ -41,15 +43,15 @@ public class LicensePage extends PageBase {
         return wait;
     }
 
-    public void licenseVerify(String License) {
+    public void licenseVerify(String license) {
 
         List<String> values = licenses.stream().map(s -> s.getText()).collect(Collectors.toList());
         for (String value : values) {
             System.out.println(value);
         }
-        Boolean match = values.stream().anyMatch(s -> s.equalsIgnoreCase(License));
+        Boolean match = values.stream().anyMatch(s -> s.equalsIgnoreCase(license));
         System.out.println(" ");
-        System.out.println(License + " " + "added successfully");
+        System.out.println(license+ " : " + " is added successfully");
         Assert.assertTrue(match);
 
 

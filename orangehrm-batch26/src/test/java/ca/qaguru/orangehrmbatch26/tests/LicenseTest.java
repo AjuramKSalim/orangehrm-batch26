@@ -9,16 +9,17 @@ import org.testng.annotations.Test;
 
 
 public class LicenseTest extends TestBase {
+    String license = "CompTIA A+ Certification";
+
     @Test
-    public void newLicenseAddition() {
-        String License = "CompTIA A+ Certification";
+    public void newLicenseAdd() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("admin", "admin123", true, null);
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.selectMenu(MenuOptions.LICENSES);
         LicensePage licensePage = new LicensePage(driver);
-        licensePage.licenseAdd(License);
-        licensePage.licenseVerify(License);
+        licensePage.licenseAdd(license);
+        licensePage.licenseVerify(license);
 
 
     }
