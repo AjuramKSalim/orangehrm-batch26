@@ -14,6 +14,6 @@ public class MembershipsPage extends PageBase {
         PageFactory.initElements(driver, this);
     }
 
-  //  @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[4]/ul/li[5]/a")
- //   private List<WebElement> Memberships;
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[4]/ul/li[5]/a")
+   private List<WebElement> Memberships;
 }

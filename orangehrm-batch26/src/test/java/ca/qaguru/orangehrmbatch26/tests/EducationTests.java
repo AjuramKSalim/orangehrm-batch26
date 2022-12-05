@@ -18,7 +18,7 @@ public void addNewEducation() {
     loginPage.login("admin", "admin123", true, null);
     HeaderPage headerPage = new HeaderPage(driver);
     headerPage.selectMenu(MenuOptions.EDUCATION);
-    EducationPage educationPage = new EducationPage(driver);
+   EducationPage educationPage = new EducationPage(driver);
    // educationPage.saveNewEducation("Level1");
    // String uuid = UUID.randomUUID().toString();
    // educationPage.saveNewEducation("level1"+uuid);
