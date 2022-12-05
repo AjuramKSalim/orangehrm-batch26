@@ -1,0 +1,9 @@
+ca\qaguru\orangehrmbatch26\tests\Parameterization.class
+ca\qaguru\orangehrmbatch26\pages\HeaderPage.class
+ca\qaguru\orangehrmbatch26\pages\MenuOptions.class
+ca\qaguru\orangehrmbatch26\tests\ParameterizationData.class
+ca\qaguru\orangehrmbatch26\pages\EducationPage.class
+ca\qaguru\orangehrmbatch26\tests\EducationTests.class
+ca\qaguru\orangehrmbatch26\library\PageBase.class
+ca\qaguru\orangehrmbatch26\library\TestBase.class
+ca\qaguru\orangehrmbatch26\pages\LoginPage.class
