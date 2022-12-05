@@ -2,10 +2,7 @@ package ca.qaguru.orangehrmbatch26.tests;
 
 
 import ca.qaguru.orangehrmbatch26.library.TestBase;
-import ca.qaguru.orangehrmbatch26.pages.EducationPage;
-import ca.qaguru.orangehrmbatch26.pages.HeaderPage;
-import ca.qaguru.orangehrmbatch26.pages.LoginPage;
-import ca.qaguru.orangehrmbatch26.pages.MenuOptions;
+import ca.qaguru.orangehrmbatch26.pages.*;
 import org.testng.annotations.Test;
 
 import java.util.UUID;
@@ -19,9 +16,11 @@ public void addNewEducation() {
     HeaderPage headerPage = new HeaderPage(driver);
     headerPage.selectMenu(MenuOptions.EDUCATION);
    EducationPage educationPage = new EducationPage(driver);
-   // educationPage.saveNewEducation("Level1");
-   // String uuid = UUID.randomUUID().toString();
-   // educationPage.saveNewEducation("level1"+uuid);
+    MembershipsPage membershipsPage = new MembershipsPage(driver);
+    membershipsPage.selectMenu(MenuOptions.MEMBERSHIPS);
+    educationPage.saveNewEducation("Level1");
+   String uuid = UUID.randomUUID().toString();
+   educationPage.saveNewEducation("level1"+uuid);
 }
 }
 
