@@ -18,9 +18,10 @@ public void addNewEducation() {
    EducationPage educationPage = new EducationPage(driver);
     MembershipsPage membershipsPage = new MembershipsPage(driver);
     membershipsPage.selectMenu(MenuOptions.MEMBERSHIPS);
-    educationPage.saveNewEducation("Level1");
-   String uuid = UUID.randomUUID().toString();
-   educationPage.saveNewEducation("level1"+uuid);
+
+   // educationPage.saveNewEducation("Level1");
+  // String uuid = UUID.randomUUID().toString();
+   //educationPage.saveNewEducation("level1"+uuid);
 }
 }
 

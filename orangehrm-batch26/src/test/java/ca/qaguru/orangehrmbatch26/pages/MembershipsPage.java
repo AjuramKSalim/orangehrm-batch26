@@ -21,7 +21,7 @@ public class MembershipsPage extends PageBase {
    private List<WebElement> Memberships;
 
     public void selectMenu(String memberships) {
-        click(By.cssSelector(MembershipAddBtn));
+     //   click(By.cssSelector(MembershipAddBtn));
 
     }
 }
