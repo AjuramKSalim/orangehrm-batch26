@@ -14,10 +14,11 @@ public void addNewEducation() {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.login("admin", "admin123", true, null);
     HeaderPage headerPage = new HeaderPage(driver);
-    headerPage.selectMenu(MenuOptions.EDUCATION);
-   EducationPage educationPage = new EducationPage(driver);
+   // headerPage.selectMenu(MenuOptions.EDUCATION);
+  // EducationPage educationPage = new EducationPage(driver);
     MembershipsPage membershipsPage = new MembershipsPage(driver);
     membershipsPage.selectMenu(MenuOptions.MEMBERSHIPS);
+
 
    // educationPage.saveNewEducation("Level1");
   // String uuid = UUID.randomUUID().toString();

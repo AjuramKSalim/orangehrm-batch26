@@ -11,12 +11,14 @@ public class MembershipTest extends TestBase {
         String newRecord = "Ontario Library Membership";
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("admin", "admin123", true, null);
+
         HeaderPage headerPage = new HeaderPage(driver);
-        headerPage.selectMenu(MenuOptions.EDUCATION);
-        EducationPage educationPage = new EducationPage(driver);
+        headerPage.selectMenu(MenuOptions.MEMBERSHIPS);
+      //  EducationPage educationPage = new EducationPage(driver);
         MembershipsPage membershipsPage = new MembershipsPage(driver);
         membershipsPage.selectMenu(MenuOptions.MEMBERSHIPS);
         Thread.sleep(3000);
+        membershipsPage.clicklogin();
 
     }
 }
