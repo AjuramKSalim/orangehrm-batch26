@@ -10,18 +10,39 @@ import org.testng.annotations.Test;
 
 public class LicenseTest extends TestBase {
     String license = "CompTIA A+ Certification";
+    String licenseNew = "AWS Cloud Practitioner";
 
-    @Test
-    public void newLicenseAdd() {
+    @Test(priority = 1)
+    public void addLicense() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("admin", "admin123", true, null);
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.selectMenu(MenuOptions.LICENSES);
         LicensePage licensePage = new LicensePage(driver);
         licensePage.licenseAdd(license);
-        licensePage.licenseVerify(license);
+        licensePage.licenseAddVerify(license);
+    }
 
+    @Test(priority = 2)
+    public void editLicense() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login("admin", "admin123", true, null);
+        HeaderPage headerPage = new HeaderPage(driver);
+        headerPage.selectMenu(MenuOptions.LICENSES);
+        LicensePage licensePage = new LicensePage(driver);
+        licensePage.licenseEdit(license, licenseNew);
+        licensePage.licenseEditVerify(license, licenseNew);
+    }
 
+   @Test(priority = 3)
+    public void deleteLicense() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login("admin", "admin123", true, null);
+        HeaderPage headerPage = new HeaderPage(driver);
+        headerPage.selectMenu(MenuOptions.LICENSES);
+        LicensePage licensePage = new LicensePage(driver);
+        licensePage.licenseDelete(licenseNew);
+        licensePage.licenseDeleteVerify(licenseNew);
     }
 
 }
