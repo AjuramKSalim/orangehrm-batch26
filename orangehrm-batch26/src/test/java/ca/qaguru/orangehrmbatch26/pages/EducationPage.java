@@ -30,29 +30,26 @@ public class EducationPage extends PageBase {
         PageFactory.initElements(driver,this);
     }
 
-    public boolean saveNewEducation(String educationName) {
+    public void saveNewEducation(String educationName) {
         click(By.cssSelector(idEduAddBtn));
         setText(By.cssSelector(idEduTxtLevel), educationName);
         if (getText(By.xpath(lblAlreadyExistsMessage)).contains("Already exists")) {
             click(By.xpath(getIdEduCancelBtn));
         } else {
-            click(By.xpath( idEduSaveBtn));
+            click(By.xpath(idEduSaveBtn));
         }
-        boolean wait = isElementVisible(By.cssSelector(tblEducation));
-        return wait;
-    }
-
-    public void educationVerify(String educationName)
-    {
+        isElementVisible(By.cssSelector(tblEducation));
 
         for (WebElement Education : listEducations) {
-            String  txtEducation=Education.getText();
+            String txtEducation = Education.getText();
             System.out.println(txtEducation);
 
         }
-        Boolean match=listEducations.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(educationName));
+        Boolean match = listEducations.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(educationName));
         Assert.assertTrue(match);
         System.out.println("\n");
-        System.out.println(educationName+" is added successfully");
+        System.out.println(educationName + " is added successfully");
+        System.out.println("\n");
     }
+
 }
