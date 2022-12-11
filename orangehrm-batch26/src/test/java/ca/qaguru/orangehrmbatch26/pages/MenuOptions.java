@@ -20,6 +20,7 @@ public class MenuOptions {
     public static final String LICENSES = "Admin|Qualifications|Licenses";
     public static final String LANGUAGES = "Admin|Qualifications|Languages";
     public static final String MEMBERSHIPS = "Admin|Qualifications|Memberships";
+ //  public static final String MEMBERSHIPS1 = "Admin|Qualifications|Memberships|ADD";
     public static final String CUSTOMERS = "Time|Project Info|Customers";
     public static final String PROJECTS = "Time|Project Info|Projects";
 

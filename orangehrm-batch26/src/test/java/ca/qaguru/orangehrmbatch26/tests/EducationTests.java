@@ -16,8 +16,8 @@ public void addNewEducation() {
     HeaderPage headerPage = new HeaderPage(driver);
    // headerPage.selectMenu(MenuOptions.EDUCATION);
   // EducationPage educationPage = new EducationPage(driver);
-    MembershipsPage membershipsPage = new MembershipsPage(driver);
-    membershipsPage.selectMenu(MenuOptions.MEMBERSHIPS);
+  //  MembershipsPage membershipsPage = new MembershipsPage(driver);
+   // membershipsPage.selectMenu(MenuOptions.MEMBERSHIPS);
 
 
    // educationPage.saveNewEducation("Level1");
