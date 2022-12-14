@@ -110,12 +110,16 @@ public class UserManagementPage  extends  PageBase{
     public void deleteUser(String role, String userName) {
         isElementVisible(By.xpath(userRecords));
         getUserRecords(role);
-        System.out.println("\n" + "Usernames before deleting" + " " + userName + "\n");
-        listUserNameRecords.stream().map(s -> s.getText()).forEach(s -> System.out.println(s));
+        if(!listUserNameRecords.stream().map(s->s.getText()).anyMatch(s->s.equalsIgnoreCase(userName)))
+        {
+            System.out.println("\n"+ userName+" "+ "was not found and hence deletion not executed");
+        }
         for (int i = 0; i < listUserRecords.size(); i++) {
             String userRecord = listUserRecords.get(i).getText();
-            if (userRecord.contains(userName)) {
+            if (userRecord.contains(userName))  {
                 int row = i;
+                System.out.println("\n" + "Usernames before deleting" + " " + userName + "\n");
+                listUserNameRecords.stream().map(s -> s.getText()).forEach(s -> System.out.println(s));
                 listDeleteBtn.get(row).click();
                 isElementVisible(By.cssSelector(deletePopupContainer));
                 click(By.xpath(deletePopup));
@@ -128,13 +132,14 @@ public class UserManagementPage  extends  PageBase{
                 break;
             }
 
-
-
         }
 
 
     }
-}
+
+
+    }
+
 
 
 

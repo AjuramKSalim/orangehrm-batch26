@@ -7,17 +7,15 @@ import ca.qaguru.orangehrmbatch26.pages.MenuOptions;
 import ca.qaguru.orangehrmbatch26.pages.UserManagementPage;
 import org.testng.annotations.Test;
 
-public class UserManagementAddUserTest extends TestBase {
+public class UserManagementDeleteUserTest extends TestBase {
     @Test
-    public void addUserTest()
+    public void deleteUserTest()
     {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("admin", "admin123", true, null);
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.selectMenu(MenuOptions.USERS);
         UserManagementPage userManagement = new UserManagementPage(driver);
-        userManagement.addUser("Admin","Enabled","Peter Mac Anderson","Peter123","Peter123@#");
-
-
+        userManagement.deleteUser("Admin","Odis.Adalwin");
     }
 }
