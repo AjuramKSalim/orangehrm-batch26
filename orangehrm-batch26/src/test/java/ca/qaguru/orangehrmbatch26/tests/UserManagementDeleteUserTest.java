@@ -16,6 +16,6 @@ public class UserManagementDeleteUserTest extends TestBase {
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.selectMenu(MenuOptions.USERS);
         UserManagementPage userManagement = new UserManagementPage(driver);
-        userManagement.deleteUser("Admin","Odis.Adalwin");
+        userManagement.deleteUser("Admin","Peter123");
     }
 }
