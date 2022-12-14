@@ -7,7 +7,7 @@ import ca.qaguru.orangehrmbatch26.pages.MenuOptions;
 import ca.qaguru.orangehrmbatch26.pages.UserManagementPage;
 import org.testng.annotations.Test;
 
-public class UserMangement_AddUserTest extends TestBase {
+public class UserManagementAddUserTest extends TestBase {
     @Test
     public void addUserTest()
     {
@@ -17,6 +17,7 @@ public class UserMangement_AddUserTest extends TestBase {
         headerPage.selectMenu(MenuOptions.USERS);
         UserManagementPage userManagement = new UserManagementPage(driver);
         userManagement.addUser("Admin","Enabled","Peter Mac Anderson","Peter123","Peter123@");
-        userManagement.verifyUser("Admin","Peter123");
+
+
     }
 }
