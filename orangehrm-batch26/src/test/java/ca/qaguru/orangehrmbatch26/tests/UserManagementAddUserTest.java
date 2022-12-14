@@ -16,7 +16,7 @@ public class UserManagementAddUserTest extends TestBase {
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.selectMenu(MenuOptions.USERS);
         UserManagementPage userManagement = new UserManagementPage(driver);
-        userManagement.addUser("Admin","Enabled","Peter Mac Anderson","Peter123","Peter123@");
+        userManagement.addUser("Admin","Enabled","Peter Mac Anderson","Peter123","Peter123@#");
 
 
     }
