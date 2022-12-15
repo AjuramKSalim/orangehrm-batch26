@@ -26,24 +26,12 @@ public class Category_Job extends PageBase {
     private final String cancelBtn = "//div[@class='oxd-form-actions'] /button[1]";
     private final String saveBtn = "//div[@class='oxd-form-actions'] /button[2]";
     private final String tblCategory_Job = ".oxd-table-body";
-    private final String deletePopup = "//button[text()=' Yes, Delete ']";
-    private final String deletePopupContainer = ".orangehrm-dialog-popup";
     private final String category_Jobs = "//div[@class='oxd-table-body'] /div[@class='oxd-table-card']";
     private final String deleteBtn = ".oxd-icon.bi-trash";
     private final String editBtn = ".oxd-icon.bi-pencil-fill";
     private final String category_JobEdit = "//form[@class='oxd-form'] /div[@class='oxd-form-row'] /div /div[2]";
-
-    @FindBy(xpath = category_JobEdit)
-    private WebElement category_JobEditBox;
-
-    @FindBy(css = editBtn)
-    private List<WebElement> listEditBtn;
-
-    @FindBy(css = deleteBtn)
-    private List<WebElement> listDeleteBtn;
     @FindBy(xpath = category_Jobs)
     private List<WebElement> listCategory_Jobs;
-
 
     public void getCategory_JobNames() {
 
@@ -53,9 +41,7 @@ public class Category_Job extends PageBase {
         for (String txtCategory_Job : txtCategory_Jobs) {
             System.out.println(txtCategory_Job);
         }
-
     }
-
     public boolean Category_JobAdd(String category_Job) {
         click(By.cssSelector(category_JobAddBtn));
         setText(By.cssSelector(txtBoxCategory_Job), category_Job);
@@ -67,8 +53,6 @@ public class Category_Job extends PageBase {
         boolean wait = isElementVisible(By.cssSelector(tblCategory_Job));
         return wait;
     }
-
-
     public void category_JobAddVerify(String category_Job) {
         getCategory_JobNames();
         Boolean match = listCategory_Jobs.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(category_Job));
@@ -77,66 +61,7 @@ public class Category_Job extends PageBase {
         System.out.println(category_Job + " : " + " is added successfully");
 
     }
-
-    public Boolean category_JobEdit(String category_Job, String category_JobNew) {
-        Actions a = new Actions(driver);
-        isElementVisible(By.cssSelector(tblCategory_Job));
-        getCategory_JobNames();
-        for (int i = 0; i < listCategory_Jobs.size(); i++) {
-            String value = listCategory_Jobs.get(i).getText();
-            if (value.contains(category_Job)) {
-                int row = i;
-                listEditBtn.get(row).click();
-            }
-        }
-        isElementVisible(By.cssSelector(category_JobEdit));
-        a.moveToElement(category_JobEditBox).doubleClick().click().sendKeys(Keys.BACK_SPACE, category_JobNew).build().perform();
-        if (getText(By.xpath(lblAlreadyExistsMessage)).contains("Already exists")) {
-            click(By.xpath(cancelBtn));
-        } else {
-            click(By.xpath(saveBtn));
-        }
-        Boolean wait = isElementVisible(By.cssSelector(tblCategory_Job));
-        return wait;
-    }
-
-    public void category_JobEditVerify(String category_Job, String category_JobNew) {
-        System.out.println("\nLicense list after editing "+ category_Job);
-        getCategory_JobNames();
-        Boolean match = listCategory_Jobs.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(category_JobNew));
-        Assert.assertTrue(match);
-        System.out.println("\n");
-        System.out.println(category_Job + " is replaced with " + category_JobNew + " successfully");
-
-    }
-
-    public Boolean category_JobDelete(String category_Job) {
-
-        isElementVisible(By.cssSelector(tblCategory_Job));
-        getCategory_JobNames();
-        for (int i = 0; i < listCategory_Jobs.size(); i++) {
-            String value = listCategory_Jobs.get(i).getText();
-            if (value.contains(category_Job)) {
-                int row = i;
-                listDeleteBtn.get(row).click();
-                isElementVisible(By.cssSelector(deletePopupContainer));
-                click(By.xpath(deletePopup));
-            }
-        }
-        Boolean wait = isElementVisible(By.cssSelector(tblCategory_Job));
-        return wait;
-    }
-
-    public void category_JobDeleteVerify(String category_Job) {
-        System.out.println("\nLicense list after deleting "+ category_Job);
-        getCategory_JobNames();
-        Boolean match = listCategory_Jobs.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(category_Job));
-        Assert.assertFalse(match);
-        System.out.println(" ");
-        System.out.println(category_Job + " : " + " is deleted successfully");
-
-    }
-}
+  }
 
 
 
