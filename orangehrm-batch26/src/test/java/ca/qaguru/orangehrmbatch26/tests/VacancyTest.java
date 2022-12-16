@@ -12,7 +12,7 @@ public class VacancyTest extends TestBase {
         HeaderPage headerPage = new HeaderPage(driver);
         headerPage.selectMenu(MenuOptions.VACANCIES);
         VacancyPage vacancy =new VacancyPage(driver);
-        vacancy.searchVacancy();
+        vacancy.searchVacancy("QA Lead","Senior QA Lead","Odis Adalwin","Active");
 
     }
 }
