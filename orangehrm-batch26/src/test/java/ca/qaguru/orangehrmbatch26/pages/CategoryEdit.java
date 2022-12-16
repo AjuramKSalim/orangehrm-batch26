@@ -13,13 +13,11 @@ import java.util.stream.Collectors;
 public class CategoryEdit extends PageBase {
 
     WebDriver driver;
-
-    public CategoryEdit (WebDriver driver) {
+        public CategoryEdit (WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     private final String lblAlreadyExistsMessage = "//div[@class='oxd-form-row'] /div";
     private final String cancelBtn = "//div[@class='oxd-form-actions'] /button[1]";
     private final String saveBtn = "//div[@class='oxd-form-actions'] /button[2]";
