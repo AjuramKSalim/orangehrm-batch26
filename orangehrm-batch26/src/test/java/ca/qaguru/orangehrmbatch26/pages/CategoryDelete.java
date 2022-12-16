@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import java.util.List;
 import java.util.stream.Collectors;
+
 public class CategoryDelete extends PageBase {
 
     WebDriver driver;
@@ -56,12 +57,12 @@ public class CategoryDelete extends PageBase {
     }
 
     public void category_JobDeleteVerify(String category_Job) {
-        System.out.println("\nLicense list after deleting "+ category_Job);
+        System.out.println("\nNew Jov categories are: "+ category_Job);
         getCategory_JobNames();
         Boolean match = listCategory_Jobs.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(category_Job));
         Assert.assertFalse(match);
         System.out.println(" ");
-        System.out.println(category_Job + " : " + " is deleted successfully");
+        System.out.println(category_Job + " : " + " deleted successfully");
 
     }
 }
