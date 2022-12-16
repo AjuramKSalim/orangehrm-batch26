@@ -73,7 +73,7 @@ public class CategoryEdit extends PageBase {
     }
 
     public void category_JobEditVerify(String category_Job, String category_JobNew) {
-        System.out.println("\nLicense list after editing "+ category_Job);
+        System.out.println("\nCategories list after editing "+ category_Job);
         getCategory_JobNames();
         Boolean match = listCategory_Jobs.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(category_JobNew));
         Assert.assertTrue(match);
