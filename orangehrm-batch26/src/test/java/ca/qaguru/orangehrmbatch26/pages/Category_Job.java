@@ -37,7 +37,7 @@ public class Category_Job extends PageBase {
 
         List<String> txtCategory_Jobs = listCategory_Jobs.stream().map(s -> s.getText()).collect(Collectors.toList());
         System.out.println(" ");
-        System.out.println("job categories are:\n");
+        System.out.println("The Job categories are:\n");
         for (String txtCategory_Job : txtCategory_Jobs) {
             System.out.println(txtCategory_Job);
         }
