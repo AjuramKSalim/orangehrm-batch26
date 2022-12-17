@@ -13,13 +13,11 @@ import java.util.stream.Collectors;
 public class CategoryEdit extends PageBase {
 
     WebDriver driver;
-
-    public CategoryEdit (WebDriver driver) {
+        public CategoryEdit (WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     private final String lblAlreadyExistsMessage = "//div[@class='oxd-form-row'] /div";
     private final String cancelBtn = "//div[@class='oxd-form-actions'] /button[1]";
     private final String saveBtn = "//div[@class='oxd-form-actions'] /button[2]";
@@ -75,7 +73,7 @@ public class CategoryEdit extends PageBase {
     }
 
     public void category_JobEditVerify(String category_Job, String category_JobNew) {
-        System.out.println("\nLicense list after editing "+ category_Job);
+        System.out.println("\nCategories list after editing "+ category_Job);
         getCategory_JobNames();
         Boolean match = listCategory_Jobs.stream().map(s -> s.getText()).anyMatch(s -> s.equalsIgnoreCase(category_JobNew));
         Assert.assertTrue(match);
